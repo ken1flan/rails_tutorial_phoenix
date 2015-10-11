@@ -3,7 +3,7 @@ defmodule RailsTutorialPhoenix.Micropost do
 
   schema "microposts" do
     field :content, :string
-    field :user_id, :integer
+    belongs_to :user, RailsTutorialPhoenix.User, foreign_key: :user_id
 
     timestamps
   end

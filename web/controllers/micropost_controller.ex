@@ -7,6 +7,7 @@ defmodule RailsTutorialPhoenix.MicropostController do
 
   def index(conn, _params) do
     microposts = Repo.all(Micropost)
+    |> Repo.preload(:user)
     render(conn, "index.html", microposts: microposts)
   end
 
@@ -30,6 +31,7 @@ defmodule RailsTutorialPhoenix.MicropostController do
 
   def show(conn, %{"id" => id}) do
     micropost = Repo.get!(Micropost, id)
+    |> Repo.preload(:user)
     render(conn, "show.html", micropost: micropost)
   end
 

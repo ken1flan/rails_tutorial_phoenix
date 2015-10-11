@@ -5,6 +5,8 @@ defmodule RailsTutorialPhoenix.User do
     field :name, :string
     field :email, :string
 
+    has_many :microposts, RailsTutorialPhoenix.Micropost
+
     timestamps
   end
 

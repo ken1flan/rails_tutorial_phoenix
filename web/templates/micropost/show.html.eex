@@ -9,7 +9,7 @@
 
   <li>
     <strong>User:</strong>
-    <%= @micropost.user_id %>
+    <%= @micropost.user.name %>
   </li>
 
 </ul>

@@ -13,7 +13,7 @@
 <%= for micropost <- @microposts do %>
     <tr>
       <td><%= micropost.content %></td>
-      <td><%= micropost.user_id %></td>
+      <td><%= micropost.user.name %></td>
 
       <td class="text-right">
         <%= link "Show", to: micropost_path(@conn, :show, micropost), class: "btn btn-default btn-xs" %>
